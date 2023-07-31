@@ -1,0 +1,19 @@
+<div>
+    <h1>Product View</h1>
+        <p>{{product._id}}</p>
+        <p>{{product.title}}</p>
+        <p>{{product.description}}</p>
+        <p>{{product.code}}</p>
+        <p>{{product.category}}</p> 
+        <p>{{product.thumbnails}}</p>
+    <div class="d-flex justify-content-between w-25">
+        <button onclick="location.href='/products'" class="btn btn-secondary">Go Back</button>
+        <button onclick="addToCart('{{product._id}}')" class="btn btn-secondary">Add to cart</button>
+    </div>
+</div>
+
+<script>
+    async function addToCart(id) {
+        const response = await fetch(`http://localhost:8080/api/carts/64c7f456a8a99e973cf46716/products/${id}`, {method: "POST"})
+    }
+</script>
