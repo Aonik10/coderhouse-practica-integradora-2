@@ -9,6 +9,8 @@ export class DatabaseError extends Error {
         this.name = name;
         this.message = message;
         this.cause = cause;
+
+        Object.setPrototypeOf(this, DatabaseError.prototype);
     }
 }
 
@@ -20,5 +22,7 @@ export class NotFoundError extends Error {
         this.name = "NOT_FOUND_ERROR";
         this.message = message;
         this.cause = cause;
+
+        Object.setPrototypeOf(this, NotFoundError.prototype);
     }
 }

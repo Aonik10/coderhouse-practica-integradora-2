@@ -1,6 +1,6 @@
 import mongoose, { ConnectOptions } from "mongoose";
 
-const connectionString =
+export const connectionString =
     "mongodb+srv://coderHouse:thisIsCoderHouse123@cluster0.hgreuhe.mongodb.net/?retryWrites=true&w=majority";
 
 export const connectToDB = async () => {

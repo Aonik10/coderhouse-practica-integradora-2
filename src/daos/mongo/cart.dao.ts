@@ -12,10 +12,11 @@ export default class CartDaoMongoDB {
                 },
             })
             .lean();
-        if (!cart)
+        if (!cart) {
             throw new NotFoundError({
                 message: `Cart with id ${cid} was not found`,
             });
+        }
         return cart;
     }
 
